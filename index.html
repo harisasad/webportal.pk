@@ -1,19 +1,9 @@
-<!--
-	Author: W3layouts
-	Author URL: http://w3layouts.com
-	License: Creative Commons Attribution 3.0 Unported
-	License URL: http://creativecommons.org/licenses/by/3.0/
--->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <title>Web portal</title>
 	
-	<!-- Meta tag Keywords -->
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta charset="utf-8">
-	<meta name="keywords" content="Eduversity Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
-	Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
 	<script type="application/x-javascript">
 		addEventListener("load", function () {
 			setTimeout(hideURLbar, 0);
@@ -510,46 +500,7 @@
 		</div>
 	</div>
 	<!-- //Login modal -->
-	<?php
-	if(isset($_POST['login']))
-	{
-		
-		$user=$_POST['user'];
-		$pass=$_POST['pass'];
-		$mysqli = new mysqli('localhost','root','','ums') or die (mysqli_error($mysqli));
-		$run="Select * from admin";
-		$result=$mysqli->query($run);
-			while($row = $result->fetch_assoc())
-			{
-				
-				if($row['Ad_Username']==$user  && $row['Ad_Pass']==$pass)
-				{
-					$user2=$row['Ad_Username'];
-					
-				}
-				
-			}
-		
-			if($user=$user2)
-				{
-					session_start();
-					$_SESSION['user']=$user;
-					header("location:Adashboard.php");
-					
-				}
-			
-				else{
-					header("Refresh:0;url=adm_login.php");
-			
-					echo '<script>alert("Username or Password did not match! ");</script>';
-				}
-		
-	
-	}
-	
-	
-	
-	?>
+
 	<!-- Register modal -->
 	<div class="modal fade" id="exampleModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel1" aria-hidden="true">
 		<div class="modal-dialog" role="document">
